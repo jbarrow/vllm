@@ -4751,6 +4751,8 @@ class GPUModelRunner(
                 self.input_batch.num_tokens_no_spec,
                 self.input_batch.token_ids_cpu,
                 slot_mappings=slot_mappings,
+                req_ids=self.input_batch.req_ids,
+                requests=self.requests,
             )
         elif spec_config.use_ngram_gpu():
             assert isinstance(self.drafter, NgramProposerGPU)
